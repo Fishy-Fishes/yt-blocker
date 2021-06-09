@@ -1,8 +1,11 @@
-chrome.webNavigation.onDOMContentLoaded.addListener(details => {
+chrome.webNavigation.onDOMContentLoaded.addListener(callRemoveScript, { url: [{ hostContains: "youtube.com"}]);
+chrome.webNavigation.onHistoryStateChanged().addListener(callRemoveScript, { url: [{ hostContains: "youtube.com"}]);
+
+function callRemoveScript(details) {
 	chrome.scripting.executeScript({
 		target: {
 			tabId: details.tabId
 		},
 		files: ["removalScript.js"]
 	})
-}, { url: [{ hostContains: "youtube.com"}]});
+}
