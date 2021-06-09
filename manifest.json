@@ -1,0 +1,13 @@
+{
+  "name": "Yt blocker",
+  "description": "Blocks yt recommended",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["webNavigation", "activeTab", "scripting", "tabs"],
+  "host_permissions": [
+  	"https://www.youtube.com/"
+  ]
+}
