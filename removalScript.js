@@ -18,7 +18,7 @@ if(window.location.href.split("//")[1].split("/")[0] == "www.youtube.com") {
 		// compare element subpage ID to find the home page elements and remove them
 		console.log("comparing")
 		for(i in ytElement) {
-			if(ytElement[i].pageSubtype == "home") {
+			if(ytElement[i].getAttribute("page-subtype") == "home") {
 				ytElement[i].remove()
 				break
 			}
