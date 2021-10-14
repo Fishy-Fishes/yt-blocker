@@ -39,5 +39,5 @@ function URLchecker() {
 // execute on load
 URLchecker();
 
-// check when URL changes
+// add YT specific event listener for new pages
 document.addEventListener("yt-navigate-finish", URLchecker);
