@@ -24,20 +24,18 @@ function removeStyle() {
 }
 
 // check if current url is allowed, and exectute accordingly
-function URLchecker() {
+function checkAndUpdateStyle() {
 	if(allowedPaths.includes(window.location.pathname)) {
 		if(!document.getElementById("injected-css")) {
 			addStyle();
 		}
-	} else {
-		if(document.getElementById("injected-css")) {
-			removeStyle();
-		}
+	} else if(document.getElementById("injected-css")) {
+		removeStyle();
 	}
 }
 
 // execute on load
-URLchecker();
+checkAndUpdateStyle();
 
 // add YT specific event listener for new pages
-document.addEventListener("yt-navigate-finish", URLchecker);
+document.addEventListener("yt-navigate-finish", checkAndUpdateStyle);
