@@ -13,7 +13,7 @@ function addStyle() {
 
 	styleElement.innerHTML = customCSS;
 
-	document.head.appendChild(styleElement);
+	document.lastChild.appendChild(styleElement);
 }
 
 // remove styling
@@ -38,4 +38,4 @@ function checkAndUpdateStyle() {
 checkAndUpdateStyle();
 
 // add YT specific event listener for new pages
-document.addEventListener("yt-navigate-finish", checkAndUpdateStyle);
+document.addEventListener("yt-navigate-start", checkAndUpdateStyle);
